@@ -76,7 +76,7 @@ export default function App() {
       case "progress":
         return <Progress />;
       default:
-        return <Explore setTab={setTab} />;
+        return <Home/>;
     }
   };
 
