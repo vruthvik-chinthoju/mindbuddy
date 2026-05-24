@@ -1,0 +1,189 @@
+
+.home {
+  padding: 16px;
+  font-family: "Poppins", sans-serif;
+  background: #f6fbf8;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Hero */
+.hero {
+  background: rgb(124, 190, 124);
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 15px;
+  text-align: center;
+  background: url("./c.png");
+  height: 420px;
+  background-position: center;
+  background-size: cover;
+  filter: blur(0.5px);
+  border: 1px solid grey;
+}
+
+.hero h3 {
+  color: green;
+  font-size: 25px;
+}
+.search-bar{
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+
+.search-bar button{
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #098a3f;
+}
+
+
+.search-bar button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 10px;
+  border-radius: 40px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+button:hover {
+  background: #055a28;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+
+.search-bar a{
+  padding-left: 20px;
+  font-family: "Poppins";
+  color: white;
+  text-decoration: none;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.card span {
+  font-size: 24px;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* CTA */
+.cta {
+  margin-top: 25px;
+  padding: 15px;
+  background: #c7f0d8;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.cta button {
+  margin-top: 10px;
+  padding: 10px 10px;
+  border: none;
+  background: #098a3f;
+  color: white;
+  border-radius: 10px;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+
+.cta button:hover{
+  background-color: #0e6432;
+}
+.icon {
+  font-size: 26px;
+  color: #2e7d5b;
+  margin-bottom: 6px;
+}
+
+.day{
+  margin-top: 40px;
+  height: 200px;
+  background-color: rgb(73, 216, 73);
+}
+
+.day h3{
+  padding: 10px;
+  font-family: "Poppins";
+  margin-left: 10px;
+}
+.dayplan{
+  display: flex;
+  justify-content: space-around;
+}
+
+.dayplan img{
+  height: 120px;
+}
+
+@media screen and (max-width:500px){
+  .home{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+    .hero{
+        height: 230px;
+    }
+    .hero h3{
+        text-align: left;
+        padding-left: 10px;
+        font-size: 18px;
+    }
+    .search-bar a{
+      padding-left: 20px;
+      font-size: 12px;
+
+    }
+    
+}

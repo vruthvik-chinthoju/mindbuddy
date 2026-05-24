@@ -1,0 +1,122 @@
+.mood-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* 📅 Calendar */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.day {
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f3f4f6;
+  font-size: 14px;
+}
+
+.day.today {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+}
+
+/* Mood Grid */
+.mood-grid {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mood-card {
+  flex: 1 1 18%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.mood-card:hover {
+  transform: scale(1.05);
+}
+
+.mood-card.active {
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+}
+
+/* Sections */
+.section {
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 8px;
+  font-family: "Poppins";
+}
+
+textarea {
+  min-height: 80px;
+}
+
+/* 📊 Graph */
+.graph {
+  margin-top: 25px;
+}
+
+.graph-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.bar {
+  width: 12%;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  background: #22c55e;
+  width: 100%;
+}
+
+/* Button */
+.save-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .mood-card {
+    flex: 1 1 30%;
+  }
+
+  .day {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

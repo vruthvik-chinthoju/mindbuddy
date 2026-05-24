@@ -1,0 +1,119 @@
+/* ===== Root Variables ===== */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --heading: "Poppins", system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Base Layout ===== */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins";
+  color: black;
+  background: white;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🚨 FIX: Full width (removes left space issue) */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 24px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* ===== Text ===== */
+p {
+  font-size: 16px;
+}
+
+/* ===== Code ===== */
+code {
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 4px 8px;
+  background: var(--code-bg);
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+/* ===== Buttons (optional global style) ===== */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+  }
+
+  body {
+    font-family: "Poppins";
+    background: white;
+    color: black;
+  }
+}
