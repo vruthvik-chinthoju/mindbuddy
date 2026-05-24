@@ -1,4 +1,4 @@
-import "./css/Explore.css";
+import "./css/explore.css";
 
 const cards = [
     {
