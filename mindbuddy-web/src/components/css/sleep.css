@@ -1,0 +1,172 @@
+.sleep-page {
+  min-height: 100vh;
+  background: white;
+  color: #64b85b;
+  padding: 20px;
+  font-family: "Poppins";
+}
+
+.sleep-hero {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.moon-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.sleep-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.sleep-hero p {
+  color: #9ca3af;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.sleep-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #64b85b;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  color: #093d03;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.stat-card span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: black;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.sleep-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 20px;
+}
+
+.sleep-card {
+  background:#64b85b;
+  border-radius: 24px;
+  padding: 22px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.sleep-card:hover {
+  transform: translateY(-5px);
+}
+
+.sleep-card-icon {
+  font-size: 2.5rem;
+  color: #063804;
+  margin-bottom: 15px;
+}
+
+.sleep-duration {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 19, 4, 0.2);
+  color: darkgreen;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.sleep-card h3 {
+  margin-bottom: 10px;
+  color:darkgreen;
+}
+
+.sleep-card p {
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sleep-card button {
+  width: 100%;
+  border: none;
+  background: #106614;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.sleep-card button:hover {
+  opacity: 0.9;
+}
+
+.bedtime-section {
+  margin-top: 50px;
+}
+
+.bedtime-section h2 {
+  margin-bottom: 20px;
+}
+
+.habit {
+  background:#64b85b;
+  color: black;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid #063804;
+}
+.sleepimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sleepimg img{
+    height: 220px;
+  }
+
+
+@media (max-width: 768px) {
+  .sleep-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sleep-hero h1 {
+    font-size: 1.8rem;
+  }
+  .sleepimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sleepimg img{
+    height: 120px;
+  }
+
+  .habit{
+    font-size: 14px;
+  }
+}

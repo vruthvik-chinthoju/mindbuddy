@@ -1,0 +1,199 @@
+.journal-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(
+    135deg,
+    #f0fff6,
+    #e6fff0
+  );
+}
+
+.journal-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.journal-hero h1 {
+  font-size: 3rem;
+  color: #198754;
+  margin-bottom: 10px;
+}
+
+.journal-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #666;
+  line-height: 1.7;
+}
+
+.journal-tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.journal-tags span {
+  background: white;
+  color: #198754;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.journal-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.journal-card {
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  transition: all .3s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-4px);
+}
+
+.expanded {
+  border: 2px solid #198754;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top h2 {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.card-top p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.journal-icon {
+  font-size: 4rem;
+  color: #bde5c8;
+}
+
+.write-btn,
+.save-btn {
+  border: none;
+  background: #198754;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s;
+  font-family: "Poppins";
+}
+
+.write-btn:hover,
+.save-btn:hover {
+  background: #146c43;
+}
+
+.inline-editor {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
+
+.inline-editor textarea {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.inline-editor textarea:focus {
+  border-color: #198754;
+}
+
+.inline-editor h3 {
+  margin-top: 25px;
+  color: #198754;
+}
+
+.entries-container {
+  margin-top: 15px;
+}
+
+.entry-card {
+  background: #f7fff9;
+  border-left: 5px solid #198754;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.entry-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.entry-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.empty-entry {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+  background: #fafafa;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .journal-hero h1{
+        font-family: "Poppins";
+        font-size: 0.5rem;
+    }
+  .card-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .journal-icon {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:#5fbb90
+  }
+
+  .journal-hero h1 {
+    font-size: 2rem;
+  }
+  .journal-hero p{
+    font-family: "Poppins";
+    font-size: 13px;
+  }
+  .journal-tags span{
+    background-color:#b8f1d7;
+    /* color: grey; */
+    font-family: "Poppins";
+    font-size: 12px;
+  }
+  .journal-card{
+    border: 1px solid grey;
+  }
+}

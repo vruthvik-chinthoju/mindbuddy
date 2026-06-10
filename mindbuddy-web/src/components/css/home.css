@@ -17,18 +17,19 @@
 
 
 /* Hero */
-.hero {
+.home .hero {
   background: rgb(124, 190, 124);
   padding: 20px;
   border-radius: 16px;
   margin-top: 15px;
   text-align: center;
-  background: url("/c.png");
-  height: 420px;
+  background: url("./c.png");
+  height: 280px;
   background-position: center;
   background-size: cover;
   filter: blur(0.5px);
   border: 1px solid grey;
+
 }
 
 .hero h3 {
@@ -92,14 +93,14 @@ button:active {
 }
 
 /* Grid */
-.grid {
+.home .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 20px;
 }
 
-.card {
+.grid .card {
   background: white;
   border-radius: 12px;
   padding: 15px;
@@ -113,9 +114,10 @@ button:active {
   font-size: 24px;
 }
 
-.card p {
+.grid .card p {
   margin-top: 8px;
   font-size: 12px;
+  color: black;
 }
 
 /* CTA */
@@ -173,7 +175,7 @@ button:active {
     padding-right: 20px;
   }
     .hero{
-        height: 230px;
+        height:30px;
     }
     .hero h3{
         text-align: left;
@@ -185,5 +187,13 @@ button:active {
       font-size: 12px;
 
     }
-    
+    .cta{
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cta p{
+      font-size: 14px;
+    } 
 }

@@ -20,15 +20,16 @@
 
 .nav-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
-.nav-links button {
+.nav-links a {
   display: flex;
   align-items: center;
   gap: 6px;
 
   background: transparent;
+  text-decoration: none;
   border: none;
   color: #e5e7eb;
   font-size: 14px;
@@ -46,7 +47,7 @@
 }
 
 
-.nav-links .active {
+.navbar.desktop .nav-links .active {
   background: rgba(2, 27, 3, 0.15);
   color: black;
 }
@@ -96,13 +97,13 @@
 }
 
 .side-menu button:hover {
-  color: rgb(34, 121, 34);
+  color: #033504;
 }
 
 .navbar span{
   color: white;
   font-family: "Poppins";
-  letter-spacing: px;
+  letter-spacing: 2px;
 }
 
 .overlay {
@@ -168,9 +169,6 @@
   .mobile-bottom-nav{
     display: none;
   }
-  .mobile-header div{
-    padding-right: 0px;
-  }
 
 
 @media (max-width: 768px) {
@@ -194,6 +192,9 @@
     align-items: center;
     padding: 0 16px;
     z-index: 3000;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-family: "Poppins";
   }
   .mobile-bottom-nav button {
     display: flex;
@@ -203,7 +204,7 @@
 
     background: transparent;
     border: none;
-    color: black;
+    color: #9ca3af;
     font-size: 11px;
     cursor: pointer;
   }
@@ -231,8 +232,12 @@
   .mobile-bottom-nav.show {
     transform: translateY(0);
   }
+  .mobile-bottom-nav.show a{
+    text-decoration: none;
+
+  }
   .mobile-header div{
-    padding-right: 0px;
+    padding: 0px;
   }
 
   /* NAV ITEMS */
@@ -255,11 +260,7 @@
     color: white;
     background-color: #19831d;
     border-radius: 8px;
-    padding: 10px;
-  }
-  .nav-item:hover{
-    padding: 10px;
-    background-color: #19831d;
+    padding: 14px;
   }
   .nav-item.active .label{
     color: white;

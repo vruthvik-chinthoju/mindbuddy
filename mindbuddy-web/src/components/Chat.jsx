@@ -66,10 +66,9 @@ export default function Chat() {
           <img src={botAvatar} alt="bot" />
           <div>
             <h3>MindBuddy 💚</h3>
-            <p>I'm here to listen, support and help you feel better. How Are yoy feeling right now ?</p>
+            <p>I'm here to listen, support and help you feel better.</p>
           </div>
         </div>
-        <h4>Today</h4>
 
         {/* CHAT BODY */}
         <div className="chat-body">

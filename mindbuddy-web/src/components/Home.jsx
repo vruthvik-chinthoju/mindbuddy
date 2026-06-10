@@ -38,7 +38,6 @@ export default function Home() {
       {/* Hero */}
       <div className="hero">
         <h3>Your safe space to connect & heal</h3>
-        {/* <img src="./c.png" alt="" /> */}
       </div>
 
       {/* Search */}

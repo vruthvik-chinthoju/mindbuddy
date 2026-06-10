@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+:root {
+  --bg:        #08100d;
+  --bg2:       rgba(255, 255, 255, 0.03);
+  --border:    rgba(255, 255, 255, 0.07);
+  --border-h:  rgba(94, 201, 138, 0.35);
+  --text:      #e8f0ea;
+  --muted:     rgba(232, 240, 234, 0.5);
+  --hint:      rgba(232, 240, 234, 0.3);
+  --green:     #5ec98a;
+  --green-dk:  #3a9e68;
+
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
+
+  --radius-card: 20px;
+  --radius-btn:  40px;
+  --radius-icon: 14px;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+.exercise-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 5% 100px;
+  overflow: hidden;
+  font-family: var(--font-body);
+  /* background: radial-gradient(ellipse 80% 50% at 50% -10%, #102417 0%, #060e0a 55%), #060e0a; */
+  /* background-color: blueviolet; */
+  color: var(--text);
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-tl {
+  width: 480px;
+  height: 480px;
+  background: #22c55e;
+  top: -160px;
+  left: -160px;
+}
+
+.glow-br {
+  width: 380px;
+  height: 380px;
+  background: #16a34a;
+  bottom: -80px;
+  right: -100px;
+}
+
+/* ── Hero ───────────────────────────────── */
+
+.exercise-page .hero {
+  background:white;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.1;
+  color: darkgreen;
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--green);
+}
+
+.hero-sub {
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: 15px;
+  color: black;
+  line-height: 1.75;
+}
+
+.hero img{
+  margin-top: 30px;
+  height: 200px;
+}
+
+/* ── Tabs ───────────────────────────────── */
+
+.tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px;
+}
+
+.tab {
+  padding: 8px 20px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  border: 0.5px solid rgba(94, 201, 138, 0.2);
+  background:#64b85b;
+  color: darkgreen;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tab:hover,
+.tab.active {
+  background: rgba(94, 201, 138, 0.1);
+  border-color: rgba(94, 201, 138, 0.5);
+  color: var(--green);
+}
+
+/* ── Card grid ──────────────────────────── */
+
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .exercise-page { padding: 60px 5% 80px; }
+  .hero h1 { font-size: 22px; }
+  .tab{
+    font-size: 12px;
+  }
+}
+
+/* ── Card ───────────────────────────────── */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-h);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before { opacity: 1; }
+
+/* per-category glow tints */
+.card-sleep::before  { background: radial-gradient(circle at 80% 15%, rgba(100,100,255,0.09), transparent 60%); }
+.card-focus::before  { background: radial-gradient(circle at 80% 15%, rgba(255,200,80,0.09),  transparent 60%); }
+.card-stress::before { background: radial-gradient(circle at 80% 15%, rgba(255,100,100,0.09), transparent 60%); }
+.card-breath::before { background: radial-gradient(circle at 80% 15%, rgba(94,201,138,0.10),  transparent 60%); }
+.card-body::before   { background: radial-gradient(circle at 80% 15%, rgba(200,140,255,0.09), transparent 60%); }
+
+/* ── Card internals ─────────────────────── */
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.icon-sleep  { background: rgba(100,100,255,0.12); }
+.icon-focus  { background: rgba(255,200,80,0.12);  }
+.icon-stress { background: rgba(255,100,100,0.12); }
+.icon-breath { background: rgba(94,201,138,0.12);  }
+.icon-body   { background: rgba(200,140,255,0.12); }
+
+.card .card-duration {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 4px;
+}
+
+.card h3 {
+  font-family: "Poppins";
+  font-size: 21px;
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+.card > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.card .card-level {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: black;
+}
+
+.btn-start {
+  padding: 9px 20px;
+  border-radius: var(--radius-btn);
+  border: 0.5px solid rgba(94, 201, 138, 0.4);
+  background: transparent;
+  color: var(--green);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-start:hover {
+  background: rgba(94, 201, 138, 0.14);
+  border-color: var(--green);
+}
+.card-footer .btn-start {
+  background-color:#16a34a;
+  color: black;
+  border-color: darkgreen;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: #060e0a;
+  font-family: var(--font-body);
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+.session-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--hint);
+  margin-bottom: 10px;
+}
+
+.session-title {
+  font-family: "Poppins";
+  font-size: 30px;
+  color: var(--text);
+  margin-bottom: 44px;
+  text-align: center;
+}
+
+/* ── Orb ────────────────────────────────── */
+
+.orb-wrap {
+  position: relative;
+  width: 220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+
+.ring-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.orb-inner {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 32%, rgba(94,201,138,0.9), rgba(20,100,60,0.85));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: box-shadow 0.5s ease;
+}
+
+.orb-phase {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.orb-count {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: #fff;
+  line-height: 1;
+}
+
+/* ── Timer & cue ────────────────────────── */
+
+.session-timer {
+  font-family: var(--font-display);
+  font-size: 58px;
+  letter-spacing: -2px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.progress-bar-wrap {
+  width: 240px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.session-cue {
+  font-size: 13px;
+  color: var(--hint);
+  letter-spacing: 0.5px;
+  margin-bottom: 44px;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.6;
+  min-height: 40px;
+  transition: opacity 0.4s;
+}
+
+.btn-end {
+  padding: 12px 34px;
+  border-radius: var(--radius-btn);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(232, 240, 234, 0.4);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-end:hover {
+  background-color: red;
+  border-color: rgba(255, 100, 100, 0.4);
+  color: black;
+}
+
+@media (max-width: 640px) {
+  .exercise-page{
+    margin-top: 20px;
+    padding: 0px 20px 0px;
+    background-color: white;
+  }
+  .overlay{
+    padding-top: 90px;
+  }
+  .hero{
+    height: 400px;
+  }
+  .card h3{
+    font-size: 16px;
+  }
+  .card .card-duration{
+    color: black;
+    font-size: 14px;
+  }
+  .card .card-level{
+    font-size: 14px;
+  }
+  .hero{
+    height: 380px;
+  }
+  .hero img{
+    margin-top:30px;
+    height: 200px;
+  }
+  .hero-sub{
+    font-size: 14px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

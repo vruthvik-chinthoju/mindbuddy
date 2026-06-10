@@ -1,0 +1,132 @@
+.tips-page {
+  min-height: 100vh;
+  background: white;
+  color: black;
+  padding: 20px;
+}
+
+.tips-hero {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Poppins";
+}
+
+.tips-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.tips-hero p {
+  color: grey;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.daily-tip {
+  background: linear-gradient(
+    135deg,
+    #0a863e,
+    #002004
+  );
+  border: 1px solid #2dd4bf;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: "Poppins";
+}
+
+.daily-tip h2 {
+  margin-bottom: 10px;
+}
+
+.daily-tip p {
+  color: #d6dde5;
+  line-height: 1.6;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 18px;
+  font-family: "Poppins";
+}
+
+.tip-card {
+  background: #64b85b;
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  color: darkgreen;
+  margin-bottom: 15px;
+}
+
+.tip-card h3 {
+  margin-bottom: 10px;
+  color: darkgreen;
+}
+
+.tip-card p {
+  color: black;
+  line-height: 1.6;
+}
+
+.wellness-section {
+  margin-top: 40px;
+}
+
+.wellness-section h2 {
+  margin-bottom: 20px;
+  font-family: "Poppins";
+}
+
+.habit-list {
+  display: grid;
+  gap: 12px;
+}
+
+.habit-item {
+  background: #64b85b;
+  font-family: "Poppins";
+  padding: 16px;
+  border-radius: 12px;
+  color: black;
+  border-left: 4px solid #03360e;
+}
+
+@media (max-width: 768px) {
+  .tips-hero h1 {
+    font-size: 1.2rem;
+    padding-top: 20px;
+  }
+  .tips-hero p{
+    font-size: 14px;
+  }
+  .tip-card p{
+    font-size: 14px;
+  }
+  .habit-item{
+    font-size: 14px;
+  }
+  .daily-tip h2{
+    font-size: 18px;
+  }
+  .daily-tip p{
+    font-size: 14px;
+  }
+
+  .tips-page {
+    padding: 15px;
+  }
+}
