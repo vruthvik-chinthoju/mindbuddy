@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "./css/chat.css";
 import botAvatar from "/chatlogo.png";
 
+
 const quickMoods = ["😴 Tired", "😔 Sad", "😰 Stressed", "😡 Angry", "😟 Worried"];
 
 export default function Chat() {

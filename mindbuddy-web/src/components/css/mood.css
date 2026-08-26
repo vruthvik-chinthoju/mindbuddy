@@ -372,8 +372,9 @@
 }
 
 .mood-btn.mood-active {
-  background: var(--mb);
-  border-color: var(--mc);
+  color: white;
+  background: #15803d;
+  border-color: black;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--mc) 30%, transparent);
 }
 
@@ -470,24 +471,24 @@
   width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
-  border: 0.5px solid var(--border);
+  border: 0.5px solid white;
   background: rgba(255,255,255,0.03);
-  color: var(--text);
+  color: black;
   font-family: var(--font-body);
   font-size: 13px;
   outline: none;
   transition: border-color 0.2s;
 }
 
-.mt-input:focus { border-color: var(--border-h); }
-.mt-input::placeholder { color: var(--hint); }
+.mt-input:focus { border-color: white }
+.mt-input::placeholder { color: black; }
 
 .mt-textarea {
   width: 100%;
   min-height: 110px;
   padding: 12px 14px;
   border-radius: 10px;
-  border: 0.5px solid var(--border);
+  border: 0.5px solid white;
   background: rgba(255,255,255,0.03);
   color: var(--text);
   font-family: var(--font-body);
@@ -498,8 +499,8 @@
   transition: border-color 0.2s;
 }
 
-.mt-textarea:focus { border-color: var(--border-h); }
-.mt-textarea::placeholder { color: var(--hint); }
+.mt-textarea:focus { border-color: black; }
+.mt-textarea::placeholder { color: black; }
 
 /* ── Questions ────────────────────────────────── */
 

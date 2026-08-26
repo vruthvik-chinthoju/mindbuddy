@@ -1,12 +1,14 @@
 import "./css/navbar.css";
 import { useState, useEffect, useRef } from "react";
 import { NavIcons } from "./NavIcons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const lastScroll = useRef(0);
+
+  const location = useLocation();
 
   const tabs = [
     { path: "/", label: "Home", icon: NavIcons.Home },
@@ -87,28 +89,29 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Bottom Nav */}
-      <div
-        className={`mobile-bottom-nav ${
-          showNav ? "show" : "hide"
-        }`}
-      >
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
+      {location.pathname !== "/Chat" && (
+        <div
+          className={`mobile-bottom-nav ${showNav ? "show" : "hide"
+            }`}
+        >
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
 
-          return (
-            <NavLink
-              key={tab.path}
-              to={tab.path}
-              className={({ isActive }) =>
-                `nav-item ${isActive ? "active" : ""}`
-              }
-            >
-              <Icon />
-              <span className="label">{tab.label}</span>
-            </NavLink>
-          );
-        })}
-      </div>
+            return (
+              <NavLink
+                key={tab.path}
+                to={tab.path}
+                className={({ isActive }) =>
+                  `nav-item ${isActive ? "active" : ""}`
+                }
+              >
+                <Icon />
+                <span className="label">{tab.label}</span>
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
 
       {/* Side Drawer */}
       <div className={`side-menu ${openMenu ? "open" : ""}`}>

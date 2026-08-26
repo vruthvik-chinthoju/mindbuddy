@@ -36,7 +36,7 @@
   border-radius: 50%;
 }
 
-/* Chat body */
+
 .chat-body {
   flex: 1;
   overflow-y: auto;
@@ -45,7 +45,7 @@
   flex-direction: column;
 }
 
-/* Messages */
+
 .msg {
   display: flex;
   align-items: flex-end;
@@ -131,6 +131,8 @@
   border-radius: 20px;
   border: 1px solid #ccc;
   outline: none;
+  font-family: "Poppins";
+  padding-left: 20px;
 }
 
 .chat-input button {
@@ -143,13 +145,18 @@
   cursor: pointer;
 }
 
-/* Mobile */
+
 @media screen and (max-width: 500px) {
+
+  .chat-header p{
+    font-size: 14px;
+  }
   .chat-container {
-    height: 100vh;
+    height:100%;
     border-radius: 0;
   }
   .chat-header{
+    padding: 5px;
     background-color: #dffae9;
   }
   .chat-header{
@@ -160,3 +167,4 @@
     width: 120px;
   }
 }
+

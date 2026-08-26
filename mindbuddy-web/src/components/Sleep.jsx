@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./css/sleep.css";
 import {
   MdBedtime,
@@ -54,14 +55,63 @@ const sleepContent = [
 ];
 
 export default function Sleep() {
+  const [activeTimer, setActiveTimer] = useState(null);
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  const startTimer = (duration, title) => {
+    if (duration === "∞" || duration === "Daily") {
+      alert("This activity doesn't have a countdown timer.");
+      return;
+    }
+
+    const minutes = parseInt(duration);
+
+    setActiveTimer(title);
+    setTimeLeft(minutes * 60);
+  };
+
+  const stopTimer = () => {
+    setActiveTimer(null);
+    setTimeLeft(0);
+  };
+
+  useEffect(() => {
+    let interval;
+
+    if (activeTimer && timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+    }
+
+    if (timeLeft === 0 && activeTimer) {
+      alert(`🎉 ${activeTimer} completed!`);
+      setActiveTimer(null);
+    }
+
+    return () => clearInterval(interval);
+  }, [activeTimer, timeLeft]);
+
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+
+    return `${String(mins).padStart(2, "0")}:${String(
+      secs
+    ).padStart(2, "0")}`;
+  };
+
   return (
     <div className="sleep-page">
-        <div className="sleepimg">
-            <img src="https://static.vecteezy.com/system/resources/previews/015/535/257/non_2x/sleepy-icon-free-vector.jpg" alt="" />
-        </div>
+      <div className="sleepimg">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/015/535/257/non_2x/sleepy-icon-free-vector.jpg"
+          alt="Sleep"
+        />
+      </div>
+
       <div className="sleep-hero">
         <div className="moon-icon"></div>
-
 
         <h1>Sleep Better Tonight</h1>
 
@@ -71,19 +121,37 @@ export default function Sleep() {
         </p>
       </div>
 
+      {/* Timer Section */}
+      {activeTimer && (
+        <div className="timer-box">
+          <h2>{activeTimer}</h2>
+
+          <div className="timer">
+            {formatTime(timeLeft)}
+          </div>
+
+          <button
+            className="stop-btn"
+            onClick={stopTimer}
+          >
+            Stop Timer
+          </button>
+        </div>
+      )}
+
       <div className="sleep-stats">
         <div className="stat-card">
-          <h3>🔥 Sleep Streak</h3>
+          <h3>Sleep Streak</h3>
           <span>7 Days</span>
         </div>
 
         <div className="stat-card">
-          <h3>⏰ Avg Sleep</h3>
+          <h3>Avg Sleep</h3>
           <span>7.8 hrs</span>
         </div>
 
         <div className="stat-card">
-          <h3>⭐ Quality</h3>
+          <h3>Quality</h3>
           <span>89%</span>
         </div>
       </div>
@@ -94,7 +162,10 @@ export default function Sleep() {
 
       <div className="sleep-grid">
         {sleepContent.map((item) => (
-          <div className="sleep-card" key={item.title}>
+          <div
+            className="sleep-card"
+            key={item.title}
+          >
             <div className="sleep-card-icon">
               {item.icon}
             </div>
@@ -107,7 +178,16 @@ export default function Sleep() {
 
             <p>{item.description}</p>
 
-            <button>Start</button>
+            <button
+              onClick={() =>
+                startTimer(
+                  item.duration,
+                  item.title
+                )
+              }
+            >
+              Start
+            </button>
           </div>
         ))}
       </div>

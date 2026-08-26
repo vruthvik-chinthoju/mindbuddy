@@ -150,12 +150,18 @@
 
 
 @media (max-width: 768px) {
+  .sleep-page{
+    padding-top: 40px;
+  }
+  .stat-card span{
+    font-size: 14px;
+  }
   .sleep-stats {
     grid-template-columns: 1fr;
   }
 
   .sleep-hero h1 {
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
   .sleepimg{
     display: flex;
@@ -167,6 +173,12 @@
   }
 
   .habit{
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .sleep-page p{
     font-size: 14px;
   }
 }
